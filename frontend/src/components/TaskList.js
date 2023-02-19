@@ -6,8 +6,6 @@ import Task from "./Task";
 import TaskForm from "./TaskForm";
 import loadingImg from "../assets/loader.gif";
 
-// http://localhost:5000/api/tasks
-
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
@@ -119,7 +117,7 @@ const TaskList = () => {
         updateTask={updateTask}
       />
       {tasks.length > 0 && (
-        <div className="--flex-between --pb">
+        <div className='--flex-between --pb'>
           <p>
             <b>Total Tasks:</b> {tasks.length}
           </p>
@@ -131,12 +129,12 @@ const TaskList = () => {
 
       <hr />
       {isLoading && (
-        <div className="--flex-center">
-          <img src={loadingImg} alt="Loading" />
+        <div className='--flex-center'>
+          <img src={loadingImg} alt='Loading' />
         </div>
       )}
       {!isLoading && tasks.length === 0 ? (
-        <p className="--py">No task added. Please add a task</p>
+        <p className='--py'>No task added. Please add a task</p>
       ) : (
         <>
           {tasks.map((task, index) => {
