@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "cd src && nodemon server.js",
-    "build": "npm install",
+    "build": "npm install && rm -rf src/build",
     "frontend": "cd frontend && npm start --prefix frontend",
     "both": "concurrently \"npm run backend\" \"npm run frontend\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
